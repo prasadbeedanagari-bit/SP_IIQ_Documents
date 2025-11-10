@@ -1,0 +1,16 @@
+<Step action="call:getIdentityModel" name="Initialize" posX="15" posY="115" resultVariable="identityModel">
+    <Description>
+       Initialize the data for the identity that we are creating.
+    </Description>
+    <Transition to="xyz"/>
+ </Step> 
+
+  <Script>
+      <Source>
+        String name = (String)identityModel.get("name");
+        if (name != null) {
+          name = name.trim();
+        }
+        return name;
+      </Source>
+  </Script>
